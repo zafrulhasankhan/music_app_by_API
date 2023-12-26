@@ -5,7 +5,7 @@ const Home = ({ setSearch }) => {
   //controlling form
   const [term, setTerm] = useState('');
 
-  
+
 
 
   // clear term by clicking on cross
@@ -22,7 +22,7 @@ const Home = ({ setSearch }) => {
 
   const handleSearch = () => {
     if (
-     
+
       (/^[a-zA-Z0-9].*/.test(term.trim()) ||
         /^[a-zA-Z0-9]+[" "]/.test(term.trim()) ||
         /^[" "]+[a-zA-Z0-9]/.test(term.trim()))
@@ -31,19 +31,19 @@ const Home = ({ setSearch }) => {
     }
   };
 
-  
-  
+
+
 
   return (
     <>
-      
+
       <div className="container">
         <div className="row">
           <div className="col-md-12 home-screen align-items-center justify-content-center">
-            
+
             <h1 style={{textAlign:'center','fontFamily':'cursive',color:'#840704'}}>Music Search App</h1>
             <div className="search-box col-md-7 border d-flex py-2 justify-content-between align-items-center">
-              
+
               <form className="form-search" onSubmit={(e) => handleSubmit(e)}>
                 <input
                   type="text"
@@ -51,6 +51,7 @@ const Home = ({ setSearch }) => {
                   id="term"
                   value={term}
                   onChange={(e) => setTerm(e.target.value)}
+                  placeholder='Search here...'
                 />
               </form>
               {term ? (
@@ -59,9 +60,9 @@ const Home = ({ setSearch }) => {
                 ''
               )}
               <i className="fa fa-search" onClick={() => handleSearch()}></i>
-            </div> 
+            </div>
             <div className="buttons col-md-4 ml-5 mt-4 align-items-center justify-content-center">
-              
+
               <p style={{textAlign:'center','fontFamily':'cursive',color:'#840704'}}>Developed by <span  style={{fontFamily:'cursive'}}>Nasim</span></p>
             </div>
           </div>
@@ -71,4 +72,4 @@ const Home = ({ setSearch }) => {
   );
 };
 
-export default Home; 
+export default Home;

@@ -8,12 +8,12 @@ const HeaderSearchPage = ({ searchTerm, setSearch }) => {
   //setTearm
   const [term, setTerm] = useState('');
 
-  
+
 
   //set term
   useEffect(() => {
     setTerm(searchTerm);
-    // eslint-disable-next-line
+
   }, []);
 
 
@@ -43,12 +43,12 @@ const HeaderSearchPage = ({ searchTerm, setSearch }) => {
 
   return (
     <>
-      
+
       <div className="search-page-header">
         <div className="col-md-12">
           <nav className="navbar py-3">
             <Link to="/" className="navbar-brand">
-              
+
               <h3 className="image-fluid ml-5" style={{'fontFamily':'cursive',color:'#840704'}}>Music Search App</h3>
             </Link>
             <div className="search-box col-md-5 border d-flex py-2 justify-content-between align-items-center">
@@ -59,6 +59,7 @@ const HeaderSearchPage = ({ searchTerm, setSearch }) => {
                   id="term"
                   value={term}
                   onChange={(e) => setTerm(e.target.value)}
+                  placeholder='Search here...'
                 />
               </form>
               {term ? (
@@ -68,7 +69,7 @@ const HeaderSearchPage = ({ searchTerm, setSearch }) => {
               )}
              <i className="fa fa-search" onClick={() => handleSearch()}></i>
             </div>
-           
+
           </nav>
         </div>
       </div>
